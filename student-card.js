@@ -48,6 +48,10 @@ class StudentCard extends HTMLElement{
                 <strong>Età: </strong><span>${this.student.yob}</span>
             </div>
         `
+        const button = document.createElement('button');
+        button.appendChild(document.createTextNode('edit'));
+        button.addEventListener('click', () => editStudent(i));
+        mainDiv.appendChild(button);
         this.shadow.appendChild(mainDiv);
     }
 
