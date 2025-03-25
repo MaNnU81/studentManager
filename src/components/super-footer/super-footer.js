@@ -9,9 +9,9 @@ class SuperFooter extends HTMLElement{
         return this.getAttribute('super-info') || 'hai dimenticato le info!!';
     }
 
-    get backgroundColor(){
-        return this.getAttribute('b-color') || 'crimson'
-    }
+    // get backgroundColor(){
+    //     return this.getAttribute('b-color') || 'crimson'
+    // }
 
     connectedCallback(){
         console.log('coonected')
@@ -20,14 +20,11 @@ class SuperFooter extends HTMLElement{
     }
 
     style(){
-        const style = document.createElement('style');
-        style.innerText = `
-            .footer-info{
-                background-color: ${this.backgroundColor};
-                color: black;
-            }
-        `
-        this.shadow.appendChild(style);
+        const cssLink = document.createElement('link');
+        cssLink.rel = 'stylesheet';
+        cssLink.href = './src/components/super-footer/super-footer.css';
+        this.shadow.appendChild(cssLink);
+
     }
 
     render(){
