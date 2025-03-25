@@ -1,4 +1,4 @@
-class SuperFooter extends HTMLElement{
+export default class SuperFooter extends HTMLElement{
 
     constructor(){
         super();
@@ -24,7 +24,6 @@ class SuperFooter extends HTMLElement{
         cssLink.rel = 'stylesheet';
         cssLink.href = './src/components/super-footer/super-footer.css';
         this.shadow.appendChild(cssLink);
-
     }
 
     render(){

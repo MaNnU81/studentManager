@@ -1,4 +1,4 @@
-class SuperHeader extends HTMLElement{
+export default class SuperHeader extends HTMLElement{
 
     constructor() {
         super()

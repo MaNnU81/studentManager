@@ -1,4 +1,4 @@
-class StudentService {
+export default class StudentService {
 
     constructor() {}
 
@@ -12,6 +12,8 @@ class StudentService {
             this.students = await this.getStudentsFromJson()
             this.saveStudents(this.students);
         }
+
+        return this.students;
     }
 
 
@@ -22,6 +24,7 @@ class StudentService {
 
     saveStudents(){
         localStorage.setItem('students', JSON.stringify(this.students));
+        return this.students;
     }
 
 

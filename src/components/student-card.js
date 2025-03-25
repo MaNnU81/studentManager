@@ -1,4 +1,4 @@
-class StudentCard extends HTMLElement{
+export default class StudentCard extends HTMLElement{
 
     constructor(){
         super();
@@ -28,7 +28,7 @@ class StudentCard extends HTMLElement{
             .card{
                 border-radius: 8px;
                 border: solid 1px #313131;
-                padding: 0px;
+                padding: 8px;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -50,7 +50,10 @@ class StudentCard extends HTMLElement{
         `
         const button = document.createElement('button');
         button.appendChild(document.createTextNode('edit'));
-        button.addEventListener('click', () => editStudent(i));
+        button.addEventListener('click', () => {
+            const sDialog = document.getElementById('student-dialog');
+            sDialog.editStudent()
+        });
         mainDiv.appendChild(button);
         this.shadow.appendChild(mainDiv);
     }
